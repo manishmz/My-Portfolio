@@ -38,6 +38,8 @@ function App() {
             </MDBCol>
             <MDBCol lg="7" md="12" className="mb-lg-0 mb-2 align-text-left">
               <MDBAnimation type="fadeIn">
+                <h3 className="font-weight-bold mb-4">About Me</h3>
+                <hr />
                 <ul className="aboutMe">
                   <li>
                     {" "}
