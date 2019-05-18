@@ -150,16 +150,6 @@ function App() {
               </MDBCol>
               <MDBCol lg="12" md="12" className="mb-lg-0 mb-2">
                 <h4 className="font-weight-bold mb-3 p-0">
-                  <strong>Simplify I3 </strong>
-                </h4>
-                <p>
-                  Simplifyi3 is an integrated system used for managing and
-                  tracking of projects or tasks related to infrastructure
-                </p>
-                <p>(Feb 2018 - Dec 2018)</p>
-              </MDBCol>
-              <MDBCol lg="12" md="12" className="mb-lg-0 mb-2">
-                <h4 className="font-weight-bold mb-3 p-0">
                   <strong>SCPS Dining</strong>
                 </h4>
                 <p>
