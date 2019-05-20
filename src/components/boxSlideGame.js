@@ -75,19 +75,22 @@ export default class extends React.Component {
       <div>
         <div id="image">{blocks}</div>
         <div style={overlay} className="overlay ">
-          <button
-            className="btn btn-lg btn-primary text"
-            onClick={this.startGame}
-          >
-            Start
-          </button>
-
-          <button
-            className="btn btn-lg btn-primary text"
-            onClick={this.skipGame}
-          >
-            Skip
-          </button>
+          <div className="game-panel">
+            <div className="game-panel-content">
+              <h3>Welcome to Manish's Portfolio</h3>
+              <div>
+                <button className="game-button text" onClick={this.startGame}>
+                  Start Game
+                </button>
+              </div>
+              <button
+                className="game-button text"
+                onClick={this.props.skipGame}
+              >
+                Skip
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     );
