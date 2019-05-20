@@ -4,10 +4,16 @@ import { func } from "prop-types";
 export default class extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { blockSequence: [3, 2, 4, 1, 5, 6] };
+    this.state = {
+      blockSequence: [3, 2, 4, 1, 5, 6],
+      overlay: { display: "block" }
+    };
     this.handleClick = this.handleClick.bind(this);
     this.canMove = this.canMove.bind(this);
     this.swap = this.swap.bind(this);
+    this.startGame = this.startGame.bind(this);
+    this.skipGame = this.skipGame.bind(this);
+
     this.hashmap = new Map([
       [1, [2, 4]],
       [2, [1, 3, 5]],
@@ -35,7 +41,7 @@ export default class extends React.Component {
     const temp = array[index - 1];
     array[index - 1] = array[moveIndex - 1];
     array[moveIndex - 1] = temp;
-    this.setState({ blockSequence: array });
+    this.setState({ blockSequence: array, overlayOpacity: 1 });
   };
   canMove = function(index) {
     const adjacentArray = this.hashmap.get(index);
@@ -46,8 +52,15 @@ export default class extends React.Component {
     }
     return -1;
   };
+  startGame = function() {
+    this.setState({ overlay: { display: "none" } });
+  };
+  skipGame = function() {
+    console.log("Skip Game");
+  };
   render() {
-    const blocks = this.state.blockSequence.map((block, index) => {
+    const { overlay, blockSequence } = this.state;
+    const blocks = blockSequence.map((block, index) => {
       return (
         <div
           key={index}
@@ -58,6 +71,25 @@ export default class extends React.Component {
         />
       );
     });
-    return <div id="image">{blocks}</div>;
+    return (
+      <div>
+        <div id="image">{blocks}</div>
+        <div style={overlay} className="overlay ">
+          <button
+            className="btn btn-lg btn-primary text"
+            onClick={this.startGame}
+          >
+            Start
+          </button>
+
+          <button
+            className="btn btn-lg btn-primary text"
+            onClick={this.skipGame}
+          >
+            Skip
+          </button>
+        </div>
+      </div>
+    );
   }
 }
