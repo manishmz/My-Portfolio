@@ -7,6 +7,17 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isSkipped: false, backgroundClass: "" };
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+  }
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener("resize", this.updateWindowDimensions);
+  }
+  updateWindowDimensions() {
+    console.log(`width: ${window.innerWidth}, height: ${window.innerHeight}`);
+    if (window.innerWidth <= 990) {
+      this.setState({ isSkipped: true, backgroundClass: "body" });
+    }
   }
   render() {
     return (

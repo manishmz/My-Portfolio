@@ -98,8 +98,9 @@ h3 {
 }
 /* Box Slide Game */
 #image {
-  width: 99%;
-  height: 98.6vh;
+  width: 99.4%;
+  height: 99.3vh;
+  position: relative;
 }
 .portfolio-background {
   background-image: url(./assets/portfoilio.png);
@@ -109,27 +110,26 @@ h3 {
 #image .imdiv {
   width: 33.33%;
   height: 50%;
-  background-image: url(./assets/portfoilio.png);
-  background-repeat: no-repeat;
+
   position: absolute;
 }
 .sq1 {
-  background-position: 0 0;
+  content: url(./assets/sq1.png);
 }
 .sq2 {
-  background-position: 50% 0;
+  content: url(./assets/sq2.png);
 }
 .sq3 {
-  background-position: 100% 0;
+  content: url(./assets/sq3.png);
 }
 .sq4 {
-  background-position: 0 100%;
+  content: url(./assets/sq4.png);
 }
 .sq5 {
-  background-position: 50% 100%;
+  content: url(./assets/sq5.png);
 }
 .sq6 {
-  background-position: 100% 100%;
+  content: "";
 }
 
 #pos1 {
@@ -177,6 +177,7 @@ h3 {
   transition: 0.5s ease;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
 .game-button {
   display: inline-block;
   padding: 1em 2.2em;
@@ -196,6 +197,23 @@ h3 {
   color: #aa2b32;
   background-color: #ffffff;
 }
+.fixed-button {
+  z-index: 99;
+  position: fixed;
+  top: 20px;
+  right: 0px;
+  margin: 0.3em 0em 0.3em 0;
+  padding: 0.6em 2em;
+  border: 0em;
+  background: #d73941;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 0.12em;
+}
+
 @media all and (max-width: 30em) {
   .game-button {
     display: block;

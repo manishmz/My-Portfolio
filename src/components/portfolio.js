@@ -24,6 +24,7 @@ function Portfolio() {
                     <img
                       src={profilepic}
                       className="rounded-circle img-fluid"
+                      alt=""
                     />
                   </div>
                   <MDBCardBody>
