@@ -95,6 +95,9 @@ h3 {
   .experience-image-width {
     width: 20%;
   }
+  .body {
+    height: auto;
+  }
 }
 /* Box Slide Game */
 #image {
